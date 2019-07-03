@@ -1,0 +1,176 @@
+
+
+
+
+<div class="main-blog">
+  <div class="blog-div">
+      <mat-card class="example-card" *ngIf="blogData | async as blog">
+        <mat-card-header>
+          <mat-card-title class="header-name">
+            <!-- <p [innerHTML]="blog?.title"></p> -->
+            <h1>
+              {{blog?.title}}
+              <!-- Aliquam ac arcu ac neque volutpat posuere eu eget odio -->
+            </h1>
+            <!-- <div [innerHTML]="blog?.title"></div> -->
+          </mat-card-title>
+          <mat-card-subtitle>
+            <!-- <div>Created By: Shrishail</div> -->
+            <div [innerHTML]="blog?.authorName">Created By: {{blog?.authorName}}</div>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <!-- <img mat-card-image src="assets/BLOG1.jpg" alt="Photo of a Shiba Inu"> -->
+        <img mat-card-image [src]="blog?.titleImage" alt="Photo of a Shiba Inu">
+        <p>category: {{blog?.category}}</p>
+        <mat-card-content>
+          <div class="content">
+            <!-- <p>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+              bred for hunting.
+            </p>
+            <p>
+              None of us want to focus on SEO when we first build a blog because it’s so fun to just write. But it’s a
+              lot more fun to “just write” for a large audience. That’s what I’m going to show you these 5 simple SEO
+              steps you can do in under an hour.
+            </p>
+            <p>
+              Everything has beauty, but not everyone sees it. to read a writer, for me, is not merely to get an idea of
+              what he says, but to go off with him and travel in his company. if you do not tell the truth about
+              yourself, you cannot tell it about other people. truth indeed rather alleviates than hurts, and will
+              always bear up against falsehood, as oil does above water. drop the question what tomorrow may bring, and
+              count as profit every day that fate allows you. in languages that form the word ‘compassion’ not from the
+              root ‘suffering’ but from the root ‘feeling’, the word is used in approximately the same way, but to
+              contend that it designates a bad or inferior sentiment is difficult. the secret strength of its etymology
+              floods the word with another light and gives it a broader meaning: to have compassion (co-feeling) means
+              not only to be able to live with others’ misfortune but also able to feel with him any emotion – joy,
+              anxiety, happiness, pain. this kind of compassion therefore signifies the maximal capacity of affective
+              imaginations, the art of emotional telepathy.
+            </p>
+            <p>
+              Everything has beauty, but not everyone sees it. to read a writer, for me, is not merely to get an idea of
+              what he says, but to go off with him and travel in his company. if you do not tell the truth about
+              yourself, you cannot tell it about other people. truth indeed rather alleviates than hurts, and will
+              always bear up against falsehood, as oil does above water. drop the question what tomorrow may bring, and
+              count as profit every day that fate allows you. in languages that form the word ‘compassion’ not from the
+              root ‘suffering’ but from the root ‘feeling’, the word is used in approximately the same way, but to
+              contend that it designates a bad or inferior sentiment is difficult. the secret strength of its etymology
+              floods the word with another light and gives it a broader meaning: to have compassion (co-feeling) means
+              not only to be able to live with others’ misfortune but also able to feel with him any emotion – joy,
+              anxiety, happiness, pain. this kind of compassion therefore signifies the maximal capacity of affective
+              imaginations, the art of emotional telepathy.
+            </p>
+            <p>
+              Nam posuere sem sed scelerisque porta. Integer tristique tortor nisi, at tincidunt felis elementum at.
+              Etiam porttitor orci vel odio finibus, non tristique nisl pellentesque. Ut sed tempor lectus, eu malesuada
+              diam. Donec iaculis ex quis nisi mattis, eu ullamcorper turpis convallis. Vestibulum ullamcorper
+              condimentum malesuada. Duis sodales rhoncus quam eget dapibus. Nunc auctor sollicitudin massa, at suscipit
+              lacus fringilla eu. Nulla volutpat id odio nec rutrum. Vestibulum pulvinar metus vehicula mauris imperdiet
+              accumsan. Mauris justo neque, facilisis vel porta et, luctus maximus ex. Suspendisse accumsan elit ac
+              lacus tincidunt fermentum ut ac sem. Cras malesuada est vitae felis tempor lobortis. Duis dignissim ac
+              neque sit amet dapibus.
+            </p>
+            <p>
+
+              Mauris ornare turpis est, sit amet ullamcorper felis pharetra eget. Aliquam in eleifend mauris. Aenean a
+              mi diam. Suspendisse dictum erat et molestie fringilla. In euismod laoreet libero et venenatis. Morbi est
+              massa, faucibus sed tellus lobortis, viverra interdum massa. Phasellus lobortis risus pharetra, blandit
+              nisl id, auctor diam. Aenean non faucibus quam, sit amet tristique turpis. Donec lectus lacus, egestas et
+              tempor nec, convallis eu risus. Quisque nec hendrerit felis. Phasellus ultrices velit quis cursus
+              pellentesque.
+            </p>
+            <p>
+
+              Cras et egestas nisi, sed aliquam odio. Sed egestas tincidunt malesuada. Pellentesque sit amet porta
+              justo. Suspendisse a imperdiet erat. Nullam cursus, libero eget pretium pretium, magna ipsum accumsan
+              nulla, quis hendrerit lacus enim a lacus. Etiam metus lectus, faucibus eget est sed, porttitor laoreet mi.
+              Cras euismod convallis sapien sed ullamcorper. Duis eleifend nunc ut nulla dictum, non molestie diam
+              pulvinar. Aliquam gravida, tortor nec lobortis lacinia, dolor arcu semper quam, nec mattis mauris magna et
+              massa. Nulla facilisi. Ut lacinia dui ac leo semper, in iaculis est ullamcorper. Duis varius neque et
+              varius vulputate. Sed tristique mauris eget dolor ullamcorper, eget eleifend nisl sodales. Vestibulum
+              placerat libero augue, dictum facilisis nisi porttitor ut.
+            </p> -->
+            <div *ngFor="let content of blog.content">
+
+              <ng-container *ngIf="content?.paragraph">
+                <!-- <p>{{content?.paragraph}}</p> -->
+                <div [innerHTML]="content?.paragraph"></div>
+              </ng-container>
+              
+              <ng-container *ngIf="content?.image">
+                <img [src]="content?.image" alt="" class="contentImage">
+              </ng-container>
+
+              <!-- {{content?.link}} -->
+              <ng-container *ngIf="content?.link">
+                <div class="videoWrapper">
+                  <iframe width="420" height="345" class="youtube-link" [src]="content?.link | safe">
+                  </iframe>
+                  <!-- <iframe width="420" height="315"
+src="https://www.youtube.com/embed/0xaV3yaYhhs">
+</iframe> -->
+                </div>
+              </ng-container>
+              
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="actions" fxLayoutAlign="center"  fxLayout="row" style="left: 40%">
+            <svg  matTooltip="Facebook" class="social-icons" viewBox="0 0 24 24">
+                <path fill="#000000" d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M18,5H15.5A3.5,3.5 0 0,0 12,8.5V11H10V14H12V21H15V14H18V11H15V9A1,1 0 0,1 16,8H18V5Z" />
+            </svg>
+            <svg matTooltip="Twitter" class="social-icons" viewBox="0 0 24 24">
+                <path fill="#000000" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+            </svg>
+            <svg matTooltip="Instagram" class="social-icons" viewBox="0 0 24 24">
+                <path fill="#000000" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+            </svg>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+
+  </div>
+  <div class="right-nav">
+    <mat-card class="sidenav">
+        <mat-card-header>
+            <mat-card-title class="recently_header">Recently Posts</mat-card-title>
+        </mat-card-header>
+      <mat-card class="example-card1" *ngFor="let d of _recentlyPosts | async">
+        <mat-card-header>
+          <img mat-card-avatar class="example-header-image" [src]="d.titleImage" alt="title">
+          <mat-card-title>
+            {{d.title.substr(0,60)+"..."}}
+          </mat-card-title>
+        </mat-card-header>
+      </mat-card>
+
+    </mat-card>
+    <mat-card class="sidenav">
+      <mat-card-header>
+        <mat-card-title class="recently_header">Popular Post Now</mat-card-title>
+      </mat-card-header>
+      <mat-card class="example-card1" *ngFor="let d of _popularBlog | async">
+        <mat-card-header>
+          <img mat-card-avatar class="example-header-image" [src]="d.titleImage" alt="title">
+          <mat-card-title>
+            <!-- {{d.data.substr(0,60)+"..."}} -->
+            {{d.title.substr(0,60)+"..."}}
+          </mat-card-title>
+        </mat-card-header>
+      </mat-card>
+
+      <!-- <div id="app">
+        <div><video #video id="video" width="640" height="480" autoplay></video></div>
+        <div><button id="snap" (click)="capture()">Snap Photo</button></div>
+        <canvas #canvas id="canvas" width="640" height="480"></canvas>
+        <ul>
+            <li *ngFor="let c of captures">
+                <img src="{{ c }}" height="50" />
+            </li>
+        </ul>
+      </div> -->
+
+    </mat-card>
+  </div>
+</div>

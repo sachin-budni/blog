@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color:#f5f5f5; 
+    font-family:Muli,Helvetica Neue,Arial,sans-serif !important; 
+}
+.mat-card{
+    font-family:Muli,Helvetica Neue,Arial,sans-serif !important; 
+}
+.mat-expansion-panel-header{
+    font-family:Muli,Helvetica Neue,Arial,sans-serif !important; 
+}
+.mat-expansion-panel-content{
+    font-family:Muli,Helvetica Neue,Arial,sans-serif !important; 
+}
+.space-between{
+    flex: 1 1 auto;
+}
+.mat-card-avatar{
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 2px !important;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);;
+}
+.mat-card-sidenav{
+    width: 350px;
+    margin: 30px;
+    padding:10px;
+    height: calc(100% - 80px);
+}
+
+.mat-card-sidenav1{
+    background-color: #f5f5f5 !important;
+    border-right: none !important;
+}
+
+.ql-container{
+    height: auto !important;
+}
+
+.actions{
+    position: absolute;
+    bottom: 5px;
+    display: flex; 
+    left: 25%;
+  }
+
+  .social-icons{
+    width:30px;
+    height:30px;
+    cursor: pointer;
+    padding: 0px 10px;
+  }

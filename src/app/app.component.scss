@@ -1,0 +1,27 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
+
+.sidenav-div{
+    background: #fafafa;
+    border-right: solid 1px rgba(0,0,0,0);
+  }
+
+  .mat-card-main{
+    margin: 2%;
+    padding: 1%;
+  }
+  .mat-card-sidenav{
+      width: 350px;
+      margin: 30px;
+      padding:10px;
+      height: calc(100% - 80px);
+  }
+  .space-between{
+    flex: 1 1 auto;
+  }
