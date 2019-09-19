@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color:#EAEAEA; 
+    font-family:Muli,Helvetica Neue,Arial,sans-serif !important; 
+}
+.mat-card{
+    font-family:Muli,Helvetica Neue,Arial,sans-serif !important; 
+}
+.mat-expansion-panel-header{
+    font-family:Muli,Helvetica Neue,Arial,sans-serif !important; 
+}
+.mat-expansion-panel-content{
+    font-family:Muli,Helvetica Neue,Arial,sans-serif !important; 
+}
+.space-between{
+    flex: 1 1 auto;
+}
+.mat-card-avatar{
+    height: 60px !important;
+    width: 60px !important;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+@media(max-width:767px){
+    .mat-card-avatar{
+        height: 40px !important;
+        width: 40px !important; 
+    }
+}
+.mat-card-sidenav{
+    width: 350px;
+    margin: 30px;
+    padding:10px;
+    height: calc(100% - 80px);
+}
+
+.mat-card-sidenav1{
+    background-color: #f5f5f5 !important;
+    border-right: none !important;
+}
+
+.ql-container{
+    height: auto !important;
+}
+
+.actions{
+    position: absolute;
+    bottom: 5px;
+    display: flex; 
+    left: 25%;
+  }
+
+  .social-icons{
+    width:30px;
+    height:30px;
+    cursor: pointer;
+    padding: 0px 10px;
+  }
+  .mat-menu-panel{
+    max-width: 500px !important;
+    padding: 0px 20px !important;
+    // padding-bottom: 0px !important;
+    max-height: 200px !important;
+  }
+  .ql-syntax{
+    background-color: black;
+    color: white;
+    overflow-x: auto;
+    font-size: 14px;
+}
+.mat-card-header{
+    display: flex;
+    flex-direction: row;
+    place-content: center flex-start;
+    align-items: center;
+}
+.mat-card-header-text{
+    width: 100%;
+}
