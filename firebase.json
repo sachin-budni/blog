@@ -1,15 +1,16 @@
 {
   "hosting": {
+    "target":"blog",
     "public": "dist/blog",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
+    "rewrites":[
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source":"**",
+        "destination":"/index.html"
       }
     ]
   }
