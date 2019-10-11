@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "movie-preview-2019"
+    "default": "tracker-c3f1e"
   },
   "targets": {
-    "movie-preview-2019": {
+    "tracker-c3f1e": {
       "hosting": {
         "blog": [
-          "tamilrockers"
+          "blogs-willntrix"
         ]
       }
     }
