@@ -4,6 +4,10 @@ import { Admin } from '../model/admin';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+<<<<<<< HEAD
+=======
+import { AngularFireAuth } from 'angularfire2/auth';
+>>>>>>> blog data
 
 @Injectable({
   providedIn: 'root'
@@ -21,14 +25,26 @@ export class AdminService {
   downloadURL: Observable<string>;
 
 
+<<<<<<< HEAD
   constructor(private afDB:AngularFireDatabase,private afStorage:AngularFireStorage) { }
+=======
+  constructor(private afDB:AngularFireDatabase,private afStorage:AngularFireStorage,private afAuth:AngularFireAuth) { }
+>>>>>>> blog data
 
   getBolgs(){
     return this.afDB.list('blogs');
   }
 
   addBlog(value:Admin){
+<<<<<<< HEAD
     this.afDB.list("blogs").push(value)
+=======
+    return this.afDB.list("blogs").push(value);
+  }
+
+  authData(){
+    return this.afAuth.auth.currentUser;
+>>>>>>> blog data
   }
 
   uploadImages(files:FileList):Promise<any>{

@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
+<<<<<<< HEAD
+=======
+import { reduce } from 'rxjs/operators';
+import { Router } from '@angular/router';
+>>>>>>> blog data
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
 
+<<<<<<< HEAD
   constructor(private afDB: AngularFireDatabase) { }
 
   getDataDataBase(){
@@ -27,5 +33,14 @@ export class BlogService {
 
   updateBlog(id,viewCount){
     this.afDB.object(`blogs/${id}`).update({view:viewCount})
+=======
+  constructor(private afDB: AngularFireDatabase,private route:Router) { }
+  blogData(){
+    return this.afDB.list("blogs");
+  }
+
+  getBlogData(id){
+    return this.afDB.object(`blogs/${id}`);
+>>>>>>> blog data
   }
 }

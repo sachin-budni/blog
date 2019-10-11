@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> blog data
 <div class="main-blog">
   <div class="blog-div">
       <mat-card class="example-card" *ngIf="blogData | async as blog">
         <mat-card-header>
+<<<<<<< HEAD
           <mat-card-title class="header-name">
             <!-- <p [innerHTML]="blog?.title"></p> -->
             <h1>
@@ -94,6 +98,26 @@
 
               <ng-container *ngIf="content?.paragraph">
                 <!-- <p>{{content?.paragraph}}</p> -->
+=======
+            <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title class="header-name">
+            <h1>
+              {{blog?.title}}
+            </h1>
+          </mat-card-title>
+          <mat-card-subtitle>
+            <div [innerHTML]="blog?.authorName">Created By: {{blog?.authorName}}</div>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <div mat-card-image [style.background-image]="'url('+blog?.titleImage+')'" class="title-images"></div>
+        <!-- <img mat-card-image [src]="blog?.titleImage" alt="title-image"> -->
+        <p>category: {{blog?.category}}</p>
+        <mat-card-content>
+          <div class="content">
+            <div *ngFor="let content of blog.content">
+
+              <ng-container *ngIf="content?.paragraph">
+>>>>>>> blog data
                 <div [innerHTML]="content?.paragraph"></div>
               </ng-container>
               
@@ -101,14 +125,20 @@
                 <img [src]="content?.image" alt="" class="contentImage">
               </ng-container>
 
+<<<<<<< HEAD
               <!-- {{content?.link}} -->
+=======
+>>>>>>> blog data
               <ng-container *ngIf="content?.link">
                 <div class="videoWrapper">
                   <iframe width="420" height="345" class="youtube-link" [src]="content?.link | safe">
                   </iframe>
+<<<<<<< HEAD
                   <!-- <iframe width="420" height="315"
 src="https://www.youtube.com/embed/0xaV3yaYhhs">
 </iframe> -->
+=======
+>>>>>>> blog data
                 </div>
               </ng-container>
               
@@ -129,6 +159,7 @@ src="https://www.youtube.com/embed/0xaV3yaYhhs">
           </div>
         </mat-card-actions>
       </mat-card>
+<<<<<<< HEAD
 
   </div>
   <div class="right-nav">
@@ -174,3 +205,20 @@ src="https://www.youtube.com/embed/0xaV3yaYhhs">
     </mat-card>
   </div>
 </div>
+=======
+  </div>
+</div>
+
+<div *ngIf="spinner">
+  <div fxLayout="column" fxLayoutAlign="center center">
+      <mat-spinner></mat-spinner>
+  </div>
+</div>
+
+<div *ngIf="noData">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h3>No Data ...</h3>
+    <img src="assets/nodata.svg" alt="No data found" style="width: 40%">
+  </div>
+</div>
+>>>>>>> blog data

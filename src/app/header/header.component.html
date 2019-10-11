@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span [routerLink]="[ '/']" class="header">Myinstitutor</span>
+    <!-- <img src="assets/myinstitutor_logo.png" alt="" style="width: 250px;"> -->
+    <span class="example-spacer"></span>
+    <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon> -->
+    <button mat-button [routerLink]="[ '/login']" *ngIf="!currentUser()">Login</button>
+    <button mat-button (click)="logout()" *ngIf="currentUser()">Logout</button>
+  </mat-toolbar-row>
+</mat-toolbar>

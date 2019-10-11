@@ -57,7 +57,11 @@
     width: 100%;
   }
   .form-field{
+<<<<<<< HEAD
     width: 100%;
+=======
+    width: calc(100% - 20px);
+>>>>>>> blog data
     padding: 10px;
   }
 
@@ -87,16 +91,36 @@
     top: 0;
     opacity: 0;
   }
+<<<<<<< HEAD
   img{
+=======
+  .add-img{
+>>>>>>> blog data
     width: 150px;
     opacity: 0.5;
     cursor: pointer;
   }
 
+<<<<<<< HEAD
   // .side-nav-main-div{
   //   padding: 20px;
   // }
   .paragraph{
     width: 100%;
     padding: 10px;
+=======
+  .paragraph{
+    width: 100%;
+    padding: 10px;
+  }
+
+  .image-title{
+    text-align: center;
+  }
+  .image-title img{
+    max-width: 420px;
+    width: 100%;
+    opacity: 1;
+    cursor: none;
+>>>>>>> blog data
   }

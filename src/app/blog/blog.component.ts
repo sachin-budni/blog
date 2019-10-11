@@ -1,8 +1,16 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BlogService } from '../blog.service';
+<<<<<<< HEAD
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+=======
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { DataSnapshot } from '@angular/fire/database/interfaces';
+import { AngularFireDatabase } from 'angularfire2/database';
+>>>>>>> blog data
 
 
 export interface Section {
@@ -32,6 +40,7 @@ export class Blog{
 })
 export class BlogComponent implements OnInit {
 
+<<<<<<< HEAD
   data=[];
   blogData :Observable<any>;
   _popularBlog :Observable<any>;
@@ -157,4 +166,25 @@ export class BlogComponent implements OnInit {
       ]
     }
 
+=======
+  noData = false;
+  spinner = true;
+  blogData :Observable<any>;
+  constructor(private blogService:BlogService,private afDB: AngularFireDatabase,private route:ActivatedRoute,private router:Router) { }
+
+  ngOnInit() {
+    this.route.params.subscribe(e=>{
+      this.blogData = this.blogService.getBlogData(e.id).valueChanges();
+      this.blogData.subscribe(d=>{
+        if(!d){
+          this.spinner =false;
+          this.noData = true;
+          // this.router.navigate(['/'])
+        }else{
+          this.spinner = false;
+        }
+      })
+    });
+  }
+>>>>>>> blog data
 }

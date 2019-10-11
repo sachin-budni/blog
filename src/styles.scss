@@ -4,7 +4,11 @@
 body{
     margin: 0px;
     padding: 0px;
+<<<<<<< HEAD
     background-color:#f5f5f5; 
+=======
+    background-color:#EAEAEA; 
+>>>>>>> blog data
     font-family:Muli,Helvetica Neue,Arial,sans-serif !important; 
 }
 .mat-card{
@@ -20,10 +24,24 @@ body{
     flex: 1 1 auto;
 }
 .mat-card-avatar{
+<<<<<<< HEAD
     width: 100px !important;
     height: 100px !important;
     border-radius: 2px !important;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);;
+=======
+    height: 60px !important;
+    width: 60px !important;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+@media(max-width:767px){
+    .mat-card-avatar{
+        height: 40px !important;
+        width: 40px !important; 
+    }
+>>>>>>> blog data
 }
 .mat-card-sidenav{
     width: 350px;
@@ -54,3 +72,27 @@ body{
     cursor: pointer;
     padding: 0px 10px;
   }
+<<<<<<< HEAD
+=======
+  .mat-menu-panel{
+    max-width: 500px !important;
+    padding: 0px 20px !important;
+    // padding-bottom: 0px !important;
+    max-height: 200px !important;
+  }
+  .ql-syntax{
+    background-color: black;
+    color: white;
+    overflow-x: auto;
+    font-size: 14px;
+}
+.mat-card-header{
+    display: flex;
+    flex-direction: row;
+    place-content: center flex-start;
+    align-items: center;
+}
+.mat-card-header-text{
+    width: 100%;
+}
+>>>>>>> blog data

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+<<<<<<< HEAD
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BlogService } from '../blog.service';
@@ -6,6 +7,12 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { DataSnapshot } from '@angular/fire/database/interfaces';
 import { Admin } from '../admin/model/admin';
+=======
+import { BlogService } from '../blog.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { AngularFireList } from 'angularfire2/database';
+>>>>>>> blog data
 
 @Component({
   selector: 'app-blogs',
@@ -14,6 +21,7 @@ import { Admin } from '../admin/model/admin';
 })
 export class BlogsComponent implements OnInit {
 
+<<<<<<< HEAD
   data = [0,1,2,3,4,5,6,7,8,9]
   typesOfShoes = ['Pepper','Salt','Paprika'];
   flag:boolean = true;
@@ -107,3 +115,25 @@ export class BlogsComponent implements OnInit {
   }
 
 }
+=======
+  datas:AngularFireList<any>;
+  // items = values.question;
+  items = [];
+  constructor(private blogService:BlogService){
+
+  }
+
+  ngOnInit(){
+    this.data();
+  }
+  
+   data(){
+    this.datas = this.blogService.blogData();
+    this.datas.snapshotChanges().subscribe(action=>{
+      action.forEach(data=>{
+        this.items.push({key:data.key,...data.payload.val()})
+      })
+    })
+  }
+}
+>>>>>>> blog data
