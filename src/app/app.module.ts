@@ -5,39 +5,43 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { BlogsComponent } from './blogs/blogs.component';
-import { BlogComponent } from './blog/blog.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { AuthGuard } from './core/auth.guard';
 import { DemoMaterialModule } from './material.module';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from 'src/environments/environment.prod';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireStorageModule } from 'angularfire2/storage';
-import { BlogService } from './blog.service';
-import { SafePipe } from './safe.pipe';
-import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { LoginService } from './core/login.service';
-import { SignupComponent } from './signup/signup.component';
-import { AuthService } from './core/auth.service';
-import { ProfileComponent } from './profile/profile.component';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { HeaderComponent } from './header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BlogsComponent } from './components/blogs/blogs.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { VideoPipe } from './pipes/video.pipe';
+import { FooterComponent } from './components/footer/footer.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { TermComponent } from './components/term/term.component';
+import { SearchComponent } from './components/search/search.component';
+import { CategoryComponent } from './components/category/category.component';
+import { AuthGuard } from './core/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
     BlogsComponent,
+    ContactComponent,
     BlogComponent,
-    SafePipe,
+    VideoPipe,
+    FooterComponent,
+    RegisterComponent,
     LoginComponent,
-    SignupComponent,
-    ProfileComponent,
-    HeaderComponent,
+    TermComponent,
+    SearchComponent,
+    CategoryComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
@@ -47,9 +51,11 @@ import { HeaderComponent } from './header/header.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,AngularFireAuthModule,AngularFireStorageModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
   ],
-  providers: [AuthGuard,BlogService,LoginService,AuthService],
+  entryComponents:[TermComponent,SearchComponent],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

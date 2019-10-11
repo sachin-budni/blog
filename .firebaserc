@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "tracker-c3f1e"
+    "default": "movie-preview-2019"
+  },
+  "targets": {
+    "movie-preview-2019": {
+      "hosting": {
+        "blog": [
+          "tamilrockers"
+        ]
+      }
+    }
   }
 }

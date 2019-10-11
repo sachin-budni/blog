@@ -1,0 +1,50 @@
+<div class="main-card" >
+    <mat-card *ngFor="let item of blogs | async;">
+        <img class="mat-images" mat-card-image [src]="item.titleImage" [alt]="">
+        <mat-card-header class="title-bar">
+            <mat-card-subtitle>
+                <div class="sub-title">
+                    <div class="user" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <!-- <img [src]="blogUsers[item.id].profile" alt=""> -->
+                        <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="5px">
+                            <span>
+                                {{item.authorName}}
+                            </span>
+                            <span>
+                                {{date | date:'MMM d,y'}}
+                            </span>
+                        </div>
+                    </div>
+                    <span fxFlex></span>
+                    <div class="social">
+                        <button mat-icon-button aria-label="Example icon-button with a heart icon">
+                            <mat-icon>thumb_up</mat-icon>
+                        </button>
+                        <button mat-icon-button [matMenuTriggerFor]="menu"
+                            aria-label="Example icon-button with a heart icon">
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-icon-button aria-label="Example icon-button with a heart icon">
+                                <mat-icon svgIcon="facebook"></mat-icon>
+                            </button>
+                            <button mat-icon-button aria-label="Example icon-button with a heart icon">
+                                <mat-icon svgIcon="twitter"></mat-icon>
+                            </button>
+                            <button mat-icon-button aria-label="Example icon-button with a heart icon">
+                                <mat-icon svgIcon="instagram"></mat-icon>
+                            </button>
+                        </mat-menu>
+                    </div>
+                </div>
+            </mat-card-subtitle>
+            <mat-card-title [routerLink]="[ '/blog', item.key ]">{{item.title}}</mat-card-title>
+        </mat-card-header>
+    </mat-card>
+
+    <ng-container  *ngIf="blogs | async  as blog">
+        <div *ngIf="blog.length == 0" class="nodata" fxLayout="row" fxLayoutAlign="center center">
+            <img src="assets/nodata.svg" alt="">
+        </div>
+    </ng-container>
+</div>
