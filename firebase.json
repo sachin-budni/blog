@@ -1,6 +1,11 @@
 {
   "hosting": {
+<<<<<<< HEAD
     "public": "dist/blog",
+=======
+    "target":"blog",
+    "public": "dist",
+>>>>>>> willntrix.v1
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -8,8 +13,13 @@
     ],
     "rewrites": [
       {
+<<<<<<< HEAD
         "source": "**",
         "destination": "/index.html"
+=======
+        "source": "/**",
+        "function": "angularUniversal"
+>>>>>>> willntrix.v1
       }
     ]
   }

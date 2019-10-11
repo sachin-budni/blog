@@ -5,6 +5,7 @@ body{
     margin: 0px;
     padding: 0px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color:#f5f5f5; 
 =======
     background-color:#EAEAEA; 
@@ -96,3 +97,34 @@ body{
     width: 100%;
 }
 >>>>>>> blog data
+=======
+    // background-color:#EAEAEA; 
+    font-family:Muli,Helvetica Neue,Arial,sans-serif !important; 
+}
+
+pre{
+    overflow: auto;
+    max-height: 500px;
+    color: #e8c2c2;
+    background-color: black;
+    font-size: 14px;
+    margin: 0px;
+}
+
+.sub-h-c{
+    color:rgba(0, 0, 0, 0.54)
+}
+.mat-menu-panel{
+    min-height: auto !important;
+}
+.mat-menu-content:not(:empty){
+    padding: 0px !important;
+}
+
+.nav-font{
+    font-family:Poppins,sans-serif;
+}
+.mat-drawer-inner-container{
+    width:200px !important;
+}
+>>>>>>> willntrix.v1

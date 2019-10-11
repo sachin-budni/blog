@@ -43,6 +43,10 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+<<<<<<< HEAD
+=======
+import { OverlayModule } from '@angular/cdk/overlay';
+>>>>>>> willntrix.v1
 
 @NgModule({
   exports: [
@@ -88,6 +92,10 @@ import {
     MatTreeModule,
     PortalModule,
     ScrollingModule,
+<<<<<<< HEAD
+=======
+    OverlayModule
+>>>>>>> willntrix.v1
   ]
 })
 export class DemoMaterialModule {}

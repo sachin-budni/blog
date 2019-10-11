@@ -4,6 +4,7 @@
 
 export const environment = {
 <<<<<<< HEAD
+<<<<<<< HEAD
   production: false,
   firebaseConfig:{
     apiKey: "AIzaSyC6Lg7d6omCO4DckuCJEADU-3te6U0dcFw",
@@ -17,6 +18,9 @@ export const environment = {
 =======
   production: false
 >>>>>>> blog data
+=======
+  production: false
+>>>>>>> willntrix.v1
 };
 
 /*

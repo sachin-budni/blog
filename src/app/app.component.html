@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <app-header></app-header>
@@ -6,3 +7,132 @@
 <router-outlet></router-outlet>
 
 
+=======
+<div class="example-container">
+
+  <mat-toolbar class="example-toolbar">
+    <mat-toolbar-row class="main-all-buttons">
+
+      <button mat-icon-button (click)="snav.toggle()" fxHide.md fxHide.xl fxHide.lg>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+        <img src="https://www.willntrix.com/assets/Logo_v6.png" alt="logo" class="logo">
+        <div fxLayout="row" fxLayoutAlign="start center" fxHide.sm fxHide.xs fxLayoutGap="10px">
+          <button mat-button [routerLink]="['']"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</button>
+          <button mat-button [routerLink]="['contact']"  routerLinkActive="active">Contact</button>
+          <button mat-button [matMenuTriggerFor]="menu">Category</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Style</button>
+            <button mat-menu-item>Beauty</button>
+            <button mat-menu-item>Sports</button>
+          </mat-menu>
+          <button mat-button [routerLink]="[ 'register']" *ngIf="!($User | async)" routerLinkActive="active">Register</button>
+          <button mat-button [routerLink]="[ 'login']" *ngIf="!($User | async)"  routerLinkActive="active">Login</button>
+        </div>
+      </div>
+      <span class="example-spacer"></span>
+      <div>
+        <button mat-icon-button aria-label="Example icon-button with a heart icon" [matMenuTriggerFor]="menu1">
+          <mat-icon>search</mat-icon>
+        </button>
+        <mat-menu #menu1="matMenu">
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="search-tab">
+            <mat-form-field appearance="outline" class="search-input">
+              <input matInput placeholder="Search ...">
+            </mat-form-field>
+            <button mat-raised-button color="primary">Search</button>
+          </div>
+        </mat-menu>
+      </div>
+
+      <div class="profile" *ngIf="$User | async as user">
+        <div>
+          <img  [src]="user.photoURL?user.photoURL:'assets/profile.svg'" alt="profile" [matMenuTriggerFor]="menu2">
+        </div>
+
+      </div>
+      <mat-menu #menu2="matMenu">
+        <div fxLayout="column" fxLayoutAlign="center center" style="padding: 20px" *ngIf="$User | async as user">
+          <p>{{user.email}}</p>
+          <button mat-button (click)="Logout()">
+            <mat-icon>power_settings_new</mat-icon>
+            Logout
+          </button>
+        </div>
+      </mat-menu>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container nav-font">
+    <mat-sidenav #snav>
+      <mat-nav-list class="nav-font">
+        <a mat-list-item routerLink="/" (click)="snav.toggle()">Home</a>
+        <a mat-list-item routerLink="/contact" (click)="snav.toggle()">Contact</a>
+        <a mat-list-item [matMenuTriggerFor]="menu">Category</a>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Style</button>
+          <button mat-menu-item>Beauty</button>
+          <button mat-menu-item>Sports</button>
+        </mat-menu>
+        <a mat-list-item routerLink="/register" *ngIf="!($User | async)" (click)="snav.toggle()">Register</a>
+        <a mat-list-item routerLink="/login" *ngIf="!($User | async)" (click)="snav.toggle()">Login</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div style="padding: 20px"></div>
+      <div class="all-content" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="center space-between">
+        <div class="main-content">
+          <!-- <mat-card> -->
+            <router-outlet></router-outlet>
+          <!-- </mat-card> -->
+        </div>
+        <div style="padding: 20px"></div>
+        <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="20px" style="max-width: 350px">
+          <mat-card>
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px" class="search-main-tab">
+              <mat-form-field appearance="outline" class="search-input">
+                <input matInput placeholder="Search ...">
+              </mat-form-field>
+              <button mat-raised-button color="primary">Search</button>
+            </div>
+          </mat-card>
+
+          <mat-card class="example-card">
+            <h2>Recent Posts</h2>
+            <mat-card class="example-card1" *ngFor="let posts of recentlyPosts | async">
+              <mat-card-header>
+                <div mat-card-avatar [style.background-image]="'url('+posts?.titleImage+')'"  class="example-header-image"></div>
+                <mat-card-title class="header" [routerLink]="[ '/blog', posts.key ]">{{posts?.title}}</mat-card-title>
+                <mat-card-subtitle class="sub-header"><span>posted on:</span>{{date | date:'MMM d, y'}}</mat-card-subtitle>
+              </mat-card-header>
+            </mat-card>
+            
+          </mat-card>
+
+          <mat-card class="follow">
+            <h3>Follow Us</h3>
+            <p>Stay updated via social channels</p>
+            <a href="https://www.facebook.com/willntrix" target="_blank">
+              <img src="https://votification.com/wp-content/themes/keyword-pro/assets/img/icon-facebook.png" alt="facebook logo">
+            </a>
+          </mat-card>
+          
+          <mat-card>
+            <h2>Tags</h2>
+            <mat-chip-list aria-label="Fish selection" *ngFor="let category of categories | async">
+              <div *ngFor="let item of category">
+                <!-- <mat-chip (click)="getCategoryBlogs(item)">{{item}}</mat-chip> -->
+                <mat-chip [routerLink]="['/category', item ]">{{item}}</mat-chip>
+              </div>
+            </mat-chip-list>
+          </mat-card>
+        </div>
+      </div>
+      <app-footer></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+>>>>>>> willntrix.v1
