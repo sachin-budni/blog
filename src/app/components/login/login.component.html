@@ -1,0 +1,40 @@
+<mat-card>
+    <h1>Login</h1>
+    <div>
+        <mat-card class="sub-card">
+            <img src="assets/profile.svg" alt="" class="register-profile">
+            <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit(loginFormGroup.value)" fxLayout="column"
+                fxLayoutAlign="center">
+
+
+                <mat-form-field appearance="outline" class="form-element">
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-error
+                        *ngIf="!loginFormGroup.controls['email'].valid && loginFormGroup.controls['email'].touched">
+                        {{ "enter proper Name" }}
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-element">
+                    <input matInput placeholder="Password" formControlName="password" type="password">
+                    <mat-error
+                        *ngIf="!loginFormGroup.controls['password'].valid && loginFormGroup.controls['password'].touched">
+                        {{ "enter proper Name" }}
+                    </mat-error>
+                </mat-form-field>
+                <div fxLayout="row" fxLayoutAlign="end center">
+                    <p>
+                        <a [routerLink]="[ '/login']">Forgot password?</a>
+                    </p>
+                </div>
+                <div class="form-element">
+                    <button mat-raised-button color="primary" type="submit" class="button"
+                        [disabled]="!loginFormGroup.valid">Login</button>
+                </div>
+            </form>
+            <p class="login-link">
+                Not a member? <a [routerLink]="[ '/register']">Create account</a>
+            </p>
+        </mat-card>
+    </div>
+</mat-card>

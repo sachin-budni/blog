@@ -43,6 +43,7 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   exports: [
@@ -88,6 +89,7 @@ import {
     MatTreeModule,
     PortalModule,
     ScrollingModule,
+    OverlayModule
   ]
 })
 export class DemoMaterialModule {}
