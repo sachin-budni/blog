@@ -22,6 +22,7 @@ export class AdminComponent implements OnInit {
   constructor(private fb: FormBuilder,private adminSerivce: AdminService, private dialog: MatDialog,private router:Router) {
     this.adminSerivce.authData.subscribe(user=>{
       this.user = user;
+      this.adminForm.get('authorName').setValue(this.user.displayName)
     })
     this.adminSerivce.fetchCategoryData().then((data:any)=>{
       if(data[0]){
